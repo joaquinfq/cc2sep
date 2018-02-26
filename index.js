@@ -1,25 +1,11 @@
-/**
- * Caracteres especiales en una expresión regular que podrían ser usados como
- * separador y darían problemas.
- *
- * @type {Object}
- */
-const escape = {
-    '(' : '\\(',
-    '[' : '\\[',
-    '{' : '\\{',
-    '?' : '\\?',
-    '.' : '\\.',
-    '*' : '\\*',
-    '+' : '\\+'
-};
+const regexcape = require('regexcape');
 
 /**
  * Función para convertir texto en formato camelCase a minúsculas separadas en
  * palabras.
  *
- * @param {String} text      Texto a convertir.
- * @param {String} separator Separador a usar ('-' por defecto).
+ * @param {String}  text      Texto a convertir.
+ * @param {String?} separator Separador a usar ('-' por defecto).
  *
  * @return {String} Texto convertido.
  */
@@ -34,20 +20,18 @@ function cc2sep(text, separator)
  * Función para convertir texto en formato camelCase a minúsculas separadas en
  * palabras eliminando el separador al final o al principio y entre palabras.
  *
- * @param {String} text      Texto a convertir.
- * @param {String} separator Separador a usar ('-' por defecto).
+ * @param {String}  text      Texto a convertir.
+ * @param {String?} separator Separador a usar ('-' por defecto).
  *
  * @return {String} Texto convertido.
  */
-cc2sep.trimmed = function fromCamelCaseTrimmed(text, separator)
+cc2sep.trimmed = function cc2sepTrimmed(text, separator)
 {
     if (!separator)
     {
         separator = '-';
     }
-    const _pattern = separator in escape
-        ? escape[separator]
-        : separator;
+    const _pattern = regexcape(separator);
     return cc2sep(text, separator)
         .replace(new RegExp(`(^${_pattern}+|${_pattern}+$)`, 'g'), '')
         .replace(new RegExp(`(\\s)+${_pattern}+`, 'g'), '$1');

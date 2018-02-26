@@ -1,20 +1,23 @@
 {
-    "name"         : "cc2sep",
-    "version"      : "1.0.0",
-    "description"  : "Transform a camelized string into a lowercased one using a custom separator and accepting unicode uppercase chars.",
-    "author"       : "Joaquín Fernández",
-    "license"      : "MIT",
-    "homepage"     : "http://www.joaquinfernandez.net",
-    "repository"   : {
-        "type" : "git",
-        "url"  : "https://github.com/joaquinfq/cc2sep"
+    "name": "cc2sep",
+    "version": "1.0.2",
+    "description": "Transform a camelized string into a lowercased one using a custom separator and accepting unicode uppercase chars.",
+    "author": "Joaquín Fernández",
+    "license": "MIT",
+    "homepage": "http://www.joaquinfernandez.net",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/joaquinfq/cc2sep"
     },
-    "keywords" : [
+    "keywords": [
         "camel-case",
         "camelCase",
         "camelize",
         "dasherize",
         "kebab-case",
         "snake_case"
-    ]
+    ],
+    "dependencies": {
+        "regexcape": "^1.0.0"
+    }
 }

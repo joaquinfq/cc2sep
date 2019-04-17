@@ -1,6 +1,6 @@
 {
-    "name": "cc2sep",
-    "version": "1.0.2",
+    "name": "@jf/cc2sep",
+    "version": "2.0.0",
     "description": "Transform a camelized string into a lowercased one using a custom separator and accepting unicode uppercase chars.",
     "author": "Joaquín Fernández",
     "license": "MIT",
@@ -18,6 +18,6 @@
         "snake_case"
     ],
     "dependencies": {
-        "regexcape": "^1.0.0"
+        "@jf/regexcape": "^2.0.0"
     }
 }
